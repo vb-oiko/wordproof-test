@@ -10,7 +10,7 @@
       name="price"
       id="price"
       class="px-2 pb-1 pt-2 block w-full focus:outline-none text-gray-800"
-      placeholder="0.00"
+      :placeholder="placeholder"
       v-model="inputValue"
     />
   </div>
