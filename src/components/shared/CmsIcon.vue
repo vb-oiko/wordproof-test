@@ -1,10 +1,11 @@
 <template>
   <div
-    class="w-14 h-14 flex justify-center p-2 focus:outline-none rounded bg-indigo-700 text-white"
+    class="w-14 h-14 flex justify-center p-2 focus:outline-none rounded bg-indigo-700 text-white cursor-pointer"
     :class="{
       'bg-indigo-700': this.active,
       'bg-violet-300': !this.active,
     }"
+    @click="$emit('click')"
   >
     <svg
       v-if="isShopify"
