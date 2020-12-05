@@ -1,7 +1,10 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   theme: {
     extend: {
       colors: {
+        ...colors,
         primary: {
           "900": "hsl(171, 100%, 5%)",
           "800": "hsl(171, 100%, 15%)",
