@@ -21,7 +21,8 @@
       <notification-btn :count="2" class="self-center mr-4" />
 
       <button
-        class="block leading-4 bg-indigo-700 text-indigo-100 rounded-full px-5 py-3 mr-4 self-center"
+        @click="onAddWebsiteClick"
+        class="block leading-4 bg-indigo-700 text-indigo-100 rounded-full px-5 py-3 mr-4 self-center focus:outline-none"
       >
         + website
       </button>
@@ -56,6 +57,12 @@ export default Vue.extend({
       menuItems: ["Dashboard", "Content", "Settings", "Support"],
       activeMenuItem: "Dashboard",
     };
+  },
+
+  methods: {
+    onAddWebsiteClick() {
+      this.$emit("add-website");
+    },
   },
 });
 </script>

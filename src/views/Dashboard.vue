@@ -1,7 +1,10 @@
 <template>
   <div>
-    <app-bar />
-    <add-website-modal />
+    <app-bar @add-website="showAddWebsiteModal = true" />
+    <add-website-modal
+      :show="showAddWebsiteModal"
+      @close="showAddWebsiteModal = false"
+    />
   </div>
 </template>
 
@@ -16,6 +19,12 @@ export default Vue.extend({
   components: {
     AppBar,
     AddWebsiteModal,
+  },
+
+  data() {
+    return {
+      showAddWebsiteModal: false,
+    };
   },
 });
 </script>
