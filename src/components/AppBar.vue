@@ -18,6 +18,8 @@
         </li>
       </ul>
 
+      <notification-btn :count="2" class="self-center mr-4" />
+
       <button
         class="block leading-4 bg-indigo-700 text-indigo-100 rounded-full px-5 py-3 mr-4 self-center"
       >
@@ -42,8 +44,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import NotificationBtn from "@/components/NotificationBtn.vue";
 
 export default Vue.extend({
+  components: { NotificationBtn },
+
   name: "AppBar",
 
   data() {
