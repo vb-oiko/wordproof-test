@@ -1,5 +1,5 @@
 <template>
-  <nav class="border-b border-gray-300">
+  <nav class="border-b border-gray-300 shadow-md">
     <div class="max-w-7xl mx-auto flex ">
       <img
         src="@/assets/Logo-WordProof-720-300x62.png"
