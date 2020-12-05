@@ -39,7 +39,7 @@
       <li
         v-for="option in filteredOptions"
         :key="option.value"
-        class="px-4 py-2 hover:bg-indigo-100 hover:font-bold"
+        class="px-4 py-2 hover:bg-indigo-100 hover:font-bold text-gray-800"
         @click="onSelect(option.value)"
       >
         {{ option.label }}
