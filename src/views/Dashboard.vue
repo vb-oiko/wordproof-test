@@ -24,7 +24,7 @@ export default Vue.extend({
 
   data() {
     return {
-      showAddWebsiteModal: true,
+      showAddWebsiteModal: false,
     };
   },
 
