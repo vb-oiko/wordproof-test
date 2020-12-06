@@ -43,7 +43,7 @@
       />
     </svg>
 
-    <span v-if="isApi" class="font-bold text-lg leading-9">API</span>
+    <span v-if="isApi" class="font-bold text-lg leading-10">API</span>
   </div>
 </template>
 
