@@ -6,7 +6,7 @@
     <div
       class="absolute w-full h-full bg-gray-900 opacity-50 top-0 left-0 flex items-center justify-center"
     ></div>
-    <div class="w-96 h-1/2 bg-white text-indigo-500 relative">
+    <div class="w-96 bg-white text-indigo-700 relative rounded">
       <button
         class="text-indigo-500 flex justify-center mt-4 mr-4 absolute top-0 right-0 focus:outline-none"
         @click="onClose"
@@ -23,7 +23,7 @@
         </svg>
       </button>
 
-      <div class="mx-12 mt-10 mb-6">
+      <div class="mx-12 mt-10">
         <h2 class="font-black text-3xl text-indigo-700">Add website</h2>
         <text-input
           class="mt-4"
@@ -37,7 +37,29 @@
           :options="blockchainOptions"
           placeholder="Select the blockchain"
         />
+
+        <button
+          class="block outline:none focus:outline-none underline ml-auto mt-2"
+          @click="isAdvancedSetup = !isAdvancedSetup"
+        >
+          Advanced setup
+        </button>
+
+        <text-input
+          v-if="isAdvancedSetup"
+          v-model="address"
+          placeholder="Address"
+          label="Address"
+          class="mt-4"
+        />
       </div>
+
+      <button
+        class="outline-none focus:outline-none block text-center w-full bg-gradient-to-r 
+        from-violet-500 to-violet-400 text-violet-100 py-6 mt-8 font-semibold rounded-b"
+      >
+        Add website
+      </button>
     </div>
   </div>
 </template>
@@ -71,6 +93,8 @@ export default Vue.extend({
       ],
       websiteUrl: "",
       cms: "",
+      isAdvancedSetup: false,
+      address: "",
     };
   },
 
