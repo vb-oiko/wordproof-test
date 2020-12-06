@@ -1,11 +1,12 @@
 <template>
   <div
     v-if="show"
-    class="fixed w-full h-full top-0 left-0 flex items-center justify-center"
+    class="fixed w-full h-full top-0 left-0 flex flex-col items-center justify-center"
   >
     <div
       class="absolute w-full h-full bg-gray-900 opacity-50 top-0 left-0 flex items-center justify-center"
     ></div>
+
     <div class="w-96 bg-white text-indigo-700 relative rounded">
       <button
         class="text-indigo-500 flex justify-center mt-4 mr-4 absolute top-0 right-0 focus:outline-none"
@@ -60,6 +61,17 @@
       >
         Add website
       </button>
+    </div>
+
+    <div class="w-96 bg-warning-200 z-10 rounded mt-2 flex p-6">
+      <div
+        class="w-9 h-6 rounded-full bg-warning-600 text-warning-900 text-center overflow-hidden leading-6"
+      >
+        i
+      </div>
+      <div class="flex-grow ml-4  text-warning-900">
+        Advanced post type settings can be found in your CMS plugin.
+      </div>
     </div>
   </div>
 </template>
