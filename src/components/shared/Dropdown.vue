@@ -34,7 +34,7 @@
     </div>
     <ul
       v-if="showDropdown"
-      class="absolute left-0 top-14 w-full border border-gray-800 rounded py-1"
+      class="absolute left-0 top-14 w-full border border-gray-800 rounded py-1 bg-white"
     >
       <li
         v-for="option in filteredOptions"
