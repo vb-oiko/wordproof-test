@@ -5,6 +5,7 @@
   >
     <div
       class="absolute w-full h-full bg-gray-900 opacity-50 top-0 left-0 flex items-center justify-center"
+      @click="onClose"
     ></div>
 
     <div class="w-96 bg-white text-indigo-700 relative rounded">
@@ -28,15 +29,16 @@
         <h2 class="font-black text-3xl text-indigo-700">Add website</h2>
         <text-input
           class="mt-4"
-          v-model="websiteUrl"
+          v-model="websiteSettings.websiteUrl"
           label="Website url"
           placeholder="wordproof.io"
         />
-        <cms-select class="mt-4" v-model="cms" />
+        <cms-select class="mt-4" v-model="websiteSettings.cmsId" />
         <dropdown
           class="mt-6"
           :options="blockchainOptions"
           placeholder="Select the blockchain"
+          v-model="websiteSettings.blockchainId"
         />
 
         <button
@@ -48,7 +50,7 @@
 
         <text-input
           v-if="isAdvancedSetup"
-          v-model="address"
+          v-model="websiteSettings.address"
           placeholder="Address"
           label="Address"
           class="mt-4"
@@ -58,6 +60,7 @@
       <button
         class="outline-none focus:outline-none block text-center w-full bg-gradient-to-r 
         from-violet-500 to-violet-400 text-violet-100 py-6 mt-8 font-semibold rounded-b"
+        @click="onSuccess"
       >
         Add website
       </button>
@@ -81,7 +84,14 @@ import Vue from "vue";
 import Dropdown from "@/components/shared/Dropdown.vue";
 import TextInput from "@/components/shared/TextInput.vue";
 import CmsSelect from "@/components/shared/CmsSelect.vue";
-import { CMSType } from "@/types";
+import { BLOCKCHAIN_OPTIONS } from "@/config";
+
+const getBlankWebsiteSettings = () => ({
+  blockchainId: null,
+  cmsId: null,
+  websiteUrl: "",
+  address: "",
+});
 
 export default Vue.extend({
   name: "AddWebsiteModal",
@@ -98,21 +108,20 @@ export default Vue.extend({
 
   data() {
     return {
-      blockchainOptions: [
-        { value: 0, label: "EOS (recommended)" },
-        { value: 1, label: "Telos" },
-        { value: 2, label: "Ethereum" },
-      ],
-      websiteUrl: "",
-      cms: "",
+      blockchainOptions: BLOCKCHAIN_OPTIONS,
       isAdvancedSetup: false,
-      address: "",
+      websiteSettings: getBlankWebsiteSettings(),
     };
   },
 
   methods: {
     onClose() {
       this.$emit("close");
+    },
+
+    onSuccess() {
+      this.$emit("close");
+      this.$emit("success", this.websiteSettings);
     },
   },
 });

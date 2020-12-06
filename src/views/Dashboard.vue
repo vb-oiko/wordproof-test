@@ -4,6 +4,7 @@
     <add-website-modal
       :show="showAddWebsiteModal"
       @close="showAddWebsiteModal = false"
+      @success="onWebsiteAdd"
     />
   </div>
 </template>
@@ -23,8 +24,14 @@ export default Vue.extend({
 
   data() {
     return {
-      showAddWebsiteModal: false,
+      showAddWebsiteModal: true,
     };
+  },
+
+  methods: {
+    onWebsiteAdd(settings: object) {
+      console.warn({ ...settings });
+    },
   },
 });
 </script>
