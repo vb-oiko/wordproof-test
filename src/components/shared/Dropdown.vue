@@ -8,7 +8,7 @@
       <div
         class="px-2 pb-1 pt-2 block focus:outline-none flex-grow"
         :class="{
-          'text-gray-500': selected === null,
+          'text-gray-400': selected === null,
           'text-gray-800': selected !== null,
         }"
         @click="toggleDropdown"
