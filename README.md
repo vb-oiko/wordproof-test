@@ -37,6 +37,7 @@ Anyway here is the list of what I think should be done if it was a part of a rea
 - creating more reusable components (e.g. for buttons, icons, etc.)
 - add support of accessibility standards
 - internationalization
+- mobile first layout
 - form validation and validation feedback for form inputs
 - add transitions and animations
 - integration with the back end
